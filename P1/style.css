@@ -1,6 +1,6 @@
 body  {
     /* Ubicación de la imagen de fondo */
-    background-image: url(underground2.jpg);
+    background-image: url(FONDO1.webp);
     /* Para centrar la imagen */
     background-position: center center;
     /* Para que se reescale automaticamente con el navegador */
@@ -10,8 +10,8 @@ body  {
     /* Estilo del Encabezado1*/
     h1  {
       font-size: 50px;
-      color: yellow;
-      font-family: 'Simpsonfont.ttf', cursive;
+      color: rgb(0, 0, 0);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       margin-bottom: 0px;
     }
@@ -28,16 +28,16 @@ body  {
     
     /* Estilo de los títulos de las secciones */
     .Secciones  {
-      font-family: 'Simpsonfont.ttf', cursive;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 28px;
-      color: yellow;
+      color: black;
       text-align: center;
       margin-bottom: 0px;
     }
     
     /* Estilo de los Encabezado3 */
     .h3-izq {
-      font-family: 'Simpsonfont.ttf', cursive;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-decoration: underline black;
       font-size: 16px;
       color: black;
@@ -49,10 +49,10 @@ body  {
     .texto-izq  {
       font-size: 18px;
       color: black;
-      font-family: 'Simpsonfont.ttf', cursive;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: left;
       margin: 16px;
-      list-style-imagen: url("donut.png");
+     
       list-style-type: none;
       padding: 12px;
       margin: 9px;
@@ -70,43 +70,31 @@ body  {
     
       /* Estilo de los Encabezado3 */
     .h3-derecha-1 {
-      font-family: 'Simpsonfont.ttf', cursive;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 18px;
-      color: black;
       text-align: center;
+      color: black;
+  
       }
     
     .texto-derecha  {
       font-size: 19px;
       color: black;
-      font-family: 'Simpsonfont.ttf', cursive;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: justify;
       margin: 16px;
       list-style-type: none;
       }
-    .texto-derecha-1  {
-      font-size: 19px;
-      color: black;
-      font-family: 'Simpsonfont.ttf', cursive;
-      text-align: center;
-      margin: 16px;
-      list-style-type: none;
-        }
+    
       /* Estilo de los Encabezado3 */
     .h3-derecha-2 {
-      font-family: 'Simpsonfont.ttf', cursive;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 18px;
-      color: black;
-      text-align: cente;
-      }
-    
-    .texto-derecha-2  {
-      font-size: 19px;
-      color: black;
-      font-family: 'Simpsonfont.ttf', cursive;
       text-align: center;
-      list-style-type: none;
+      color: black;
       }
+
+       /* Gifs de la derecha */
     .D_right_gif {
       float: right;
       border-top: 25px;
@@ -114,8 +102,10 @@ body  {
       width: 30%;
       border-radius: 25px ;
       background-color: rgba(205,205,205,0.02);
-      margin-right: 39px;
+      margin-right: 155px;
     }
+
+    /* Gifs de la izquierda */
     .D_left_gif {
       float: left;
       border-top: 25px;
@@ -123,5 +113,5 @@ body  {
       width: 30%;
       border-radius: 25px ;
       background-color: rgba(205,205,205,0.02);
-      margin-left: 39px;
+      margin-left: 155px;
     }
