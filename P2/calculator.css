@@ -1,3 +1,30 @@
 body {
     background-image: url("bg.jpg");
   }
+
+  div.calculadora {
+    background: rgb(108, 163, 180);
+    border: 3px solid rgb(0, 0, 0);
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 500px;
+    border-radius: 25px;
+  }
+
+  button {
+    width: 62px;
+    height: 62px;
+    font-family: Arial;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  button.operador {
+    font-weight: bold;
+    color: #b00;
+  }
+
+  
+
+  
