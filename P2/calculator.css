@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Calculator";
+  src: url("digital-7.ttf");
+}
+
 body {
     background-image: url("bg.jpg");
   }
@@ -13,6 +18,13 @@ body {
     border-radius: 25px;
   }
 
+  p{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 30px;
+    font-family: "Calculator";
+    font-weight: bold;
+  }
   button {
     width: 62px;
     height: 62px;
@@ -25,6 +37,19 @@ body {
     color: #b00;
   }
 
-  
+  #display {
+    background-color: #a4af95;
+    color: #467702;
+    border-radius: 25px;
+    display: block;
+    text-align: right;
+    font-size: 40px;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    border: 3px solid rgb(0, 0, 0);
+    font-family: "Calculator";
+  }
 
   
