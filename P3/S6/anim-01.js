@@ -14,7 +14,7 @@ let x = 0;
 let y = 10;
 
 //-- Velocidad horizontal del objeto
-let velx = 1;
+let velx = 2;
 
 //-- Funcion principal de animacion
 function update() 
@@ -23,6 +23,15 @@ function update()
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posicion del  elemento
   //-- (física del movimiento rectilineo uniforme)
+
+  //-- Comprobar colisión con borde derecho
+  //-- Si se alcanza la anchura del canvas, se cambia la velocidad
+  //-- de signo (rebote)
+  if (x >= canvas.width) {
+    velx = -velx;
+  }
+
+  //-- Actualizar la posición
   x = x + velx;
 
   //-- 2) Borrar el canvas
