@@ -11,18 +11,18 @@ const ctx = canvas.getContext("2d");
 
 
 ctx.beginPath();
-    //-- Definir un rectangulo de dimensiones 100x50,
-    //-- cuya esquina superior izquierda está en (5,5)
-    ctx.rect(5,5, 100, 50);
+    //-- Línea horizontal
+    ctx.moveTo(10, 20);
+    ctx.lineTo(100, 20);
 
-    //-- Dibujar
-    ctx.fillStyle = 'red';
+    //-- Línea horizontal y vertical, unidas
+    ctx.moveTo(10, 80);
+    ctx.lineTo(150,80);
+    ctx.lineTo(150,20);
 
+    ctx.strokeStyle = 'blue';
     //-- Cambiar el tamaño de la linea del trazo
     ctx.lineWidth = 4;
-
-    //-- Rellenar
-    ctx.fill();
 
     //-- Dibujar el trazo
     ctx.stroke()
