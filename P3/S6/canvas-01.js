@@ -9,19 +9,12 @@ canvas.height = 100;
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
+//-- Texto solido
+ctx.font = "25px Arial";
+ctx.fillStyle = 'yellow'
+ctx.fillText("Texo sólido", 10, 30);
 
-ctx.beginPath();
-    //-- Dibujar un circulo: coordenadas x,y del centro
-    //-- Radio, Angulo inicial y angulo final
-    ctx.arc(100, 50, 10, 0, 2 * Math.PI);
-    ctx.strokeStyle = 'blue';
-    ctx.lineWidth = 3;
-    ctx.fillStyle = 'yellow';
-
-    //-- Dibujar el trazo
-    ctx.stroke()
-
-    //-- Dibujar el relleno
-    ctx.fill()
-    
-ctx.closePath()
+//-- Texto trazo
+ctx.strokeStyle = 'blue';
+ctx.font = "35px Arial";
+ctx.strokeText("Texto trazo", 5, 80);
