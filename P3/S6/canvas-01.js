@@ -11,20 +11,17 @@ const ctx = canvas.getContext("2d");
 
 
 ctx.beginPath();
-    //-- Línea horizontal
-    ctx.moveTo(10, 20);
-    ctx.lineTo(100, 20);
-
-    //-- Línea horizontal y vertical, unidas
-    ctx.moveTo(10, 80);
-    ctx.lineTo(150,80);
-    ctx.lineTo(150,20);
-
+    //-- Dibujar un circulo: coordenadas x,y del centro
+    //-- Radio, Angulo inicial y angulo final
+    ctx.arc(100, 50, 10, 0, 2 * Math.PI);
     ctx.strokeStyle = 'blue';
-    //-- Cambiar el tamaño de la linea del trazo
-    ctx.lineWidth = 4;
+    ctx.lineWidth = 3;
+    ctx.fillStyle = 'yellow';
 
     //-- Dibujar el trazo
     ctx.stroke()
+
+    //-- Dibujar el relleno
+    ctx.fill()
     
 ctx.closePath()
