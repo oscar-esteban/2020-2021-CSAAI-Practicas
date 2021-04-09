@@ -3,7 +3,7 @@ console.log("Ejecutando JS...");
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del convas
-canvas.width = 500;
+canvas.width = 700;
 canvas.height = 500;
 
 //-- Obtener el contexto del canvas
@@ -12,10 +12,15 @@ const ctx = canvas.getContext("2d");
 // LINEAS MAPA
 ctx.beginPath();
     //-- Líneas verticales
-    ctx.moveTo(100, 0);
-    ctx.lineTo(100, 500);
-    ctx.moveTo(390, 0);
-    ctx.lineTo(390, 500);
+    ctx.moveTo(150, 0);
+    ctx.lineTo(150, 500);
+    ctx.moveTo(545, 0);
+    ctx.lineTo(545, 500);
+
+    //--linea horizontal
+    ctx.moveTo(150, 30);
+    ctx.lineTo(545, 30);
+
 
     ctx.strokeStyle = 'white';
     //-- Cambiar el tamaño de la linea del trazo
@@ -25,12 +30,12 @@ ctx.beginPath();
     ctx.stroke()
 ctx.closePath()
 
-// RECTANGULO
+// RECTANGULOS
 ctx.beginPath();
   //-- Definir un rectangulo de dimensiones 25x12,
   //-- BUCLE cuya esquina superior izquierda está en (i,j)
   for (var j = 40; j <= 120;){
-    for (var i = 110; i <= 355;) {
+    for (var i = 160; i <= 540;) {
         ctx.rect(i,j, 25, 12);
         i += 35; };
     j += 20;
@@ -43,3 +48,9 @@ ctx.beginPath();
   //-- Mostrar el trazo del rectángulo
   ctx.stroke();
 ctx.closePath();
+
+//-- TEXTO
+ctx.font = "25px Arial";
+ctx.fillStyle = 'white'
+ctx.fillText("VIDAS: 2", 10, 30);
+ctx.fillText("PUNTOS: 0", 555, 30);
