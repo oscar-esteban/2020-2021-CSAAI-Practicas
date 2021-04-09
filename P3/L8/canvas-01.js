@@ -9,6 +9,17 @@ canvas.height = 500;
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
+//-- Estados del juego
+const ESTADO = {
+  INIT: 0,
+  SAQUE: 1,
+  JUGANDO: 2,
+}
+//-- Variable de estado
+//-- Arrancamos desde el estado inicial
+let estado = ESTADO.INIT;
+
+
 // LINEAS MAPA
 ctx.beginPath();
     //-- Líneas verticales
@@ -58,4 +69,16 @@ ctx.fillText("PUNTOS: 0", 565, 30);
 //-- Inicializa la bola: Llevarla a su posicion inicial
 const bola = new Bola(ctx);
 
-bola.draw();
+//bola.draw();
+
+
+
+//-- Botón de arranque
+const start = document.getElementById("Start");
+
+start.onclick = () => {
+  estado = ESTADO.SAQUE;
+  console.log("SAQUE!");
+  canvas.focus();
+}
+
