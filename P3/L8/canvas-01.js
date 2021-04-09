@@ -53,4 +53,9 @@ ctx.closePath();
 ctx.font = "25px Arial";
 ctx.fillStyle = 'white'
 ctx.fillText("VIDAS: 2", 10, 30);
-ctx.fillText("PUNTOS: 0", 5, 30);
+ctx.fillText("PUNTOS: 0", 565, 30);
+
+//-- Inicializa la bola: Llevarla a su posicion inicial
+const bola = new Bola(ctx);
+
+bola.draw();

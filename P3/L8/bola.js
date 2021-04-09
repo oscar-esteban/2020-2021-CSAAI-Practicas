@@ -4,10 +4,10 @@ class Bola {
       this.ctx = ctx;
   
       //-- Constante: Tamaño de la bola
-      this.size = 5;
+      this.size = 15;
   
       //-- Contante: Posicion inicial de la bola
-      this.x_ini = 450;
+      this.x_ini = 350;
       this.y_ini = 450;
   
       //-- Posicion generica de la bola
@@ -15,8 +15,8 @@ class Bola {
       this.y = 0;
   
       //-- Velocidad inicial de la bola
-      this.vx_ini = (Math.random() * (5 - 3) + 3);
-      this.vy_ini = (Math.random() * (5 - 3) + 3);
+      this.vx_ini = 3;
+      this.vy_ini = 1;
   
       //-- Velocidad genérica de la bola
       //-- Inicialmente a cero
