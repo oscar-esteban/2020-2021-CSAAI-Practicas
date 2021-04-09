@@ -53,4 +53,4 @@ ctx.closePath();
 ctx.font = "25px Arial";
 ctx.fillStyle = 'white'
 ctx.fillText("VIDAS: 2", 10, 30);
-ctx.fillText("PUNTOS: 0", 555, 30);
+ctx.fillText("PUNTOS: 0", 5, 30);
