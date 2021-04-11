@@ -23,12 +23,12 @@ let estado = ESTADO.INIT;
 
 
 //-- Coordenadas del objeto
-let x = 300;
-let y = 300;
+let x = 450;
+let y = 400;
 
 //-- Velocidades del objeto
-let velx = 3;
-let vely = 1;
+let velx = 0;
+let vely = 0;
 
 //-- Funcion principal de animacion
 function update() 
@@ -115,8 +115,41 @@ ctx.fillStyle = 'white'
 ctx.fillText("VIDAS: 2", 10, 30);
 ctx.fillText("PUNTOS: 0", 565, 30);
 
+
+
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
+}
+
+
+//-- Retrollamada de las teclas
+window.onkeydown = (e) => {
+  //-- En el estado inicial no se
+//-- hace caso de las teclas
+if (estado == ESTADO.INIT){
+    return;
+}
+switch (e.key) {
+  case "s":
+
+  //-- El saque solo funciona en el estado de SAQUE
+    if (estado == ESTADO.SAQUE) {
+
+      //-- Llevar bola a su posicion incicial
+      x = 450;
+      y = 400;
+
+      //-- Darle velocidad
+      velx = 3;
+      vely = 1;
+
+      //-- Cambiar al estado de jugando!
+      estado = ESTADO.JUGANDO;
+
+      return false;
+    }
+  default:
+}
 }
 
 //-- ¡Que empiece la función!
@@ -133,3 +166,18 @@ start.onclick = () => {
   canvas.focus();
 }
 
+//-- Boton de stop
+const stop = document.getElementById("Stop");
+
+stop.onclick = () => {
+  //-- Volver al estado inicial
+  estado = ESTADO.INIT;
+   //-- Llevar bola a su posicion incicial
+   x = 450;
+   y = 400;
+
+   //-- Darle velocidad
+   velx = 0;
+   vely = 0;
+  start.disabled = false;
+}
