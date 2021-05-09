@@ -115,9 +115,15 @@ window.onkeydown = (e) => {
               }
         case ".": // derecha
             xBloque = xBloque + 10;
+            if(xBloque > 390){
+                xBloque = 390;
+            }
             break;
         case ",": //izquierda
             xBloque = xBloque - 10; 
+            if(xBloque < 0){
+                xBloque = 0;
+            }
         default:
     }
 }
@@ -146,12 +152,16 @@ function update(){
         xBola = xBola + xVelocidad;
         yBola = yBola + yVelocidad;
 
-       
 
         // si no golpeo, pierdo
         if(yBola > 685){
             estado = ESTADO.INIT;
         }
+         // Choque con mi bloque
+         if(xBola >= xBloque && xBola < (xBloque+80+10) && yBola >= (yBloque-10) && yBola < (yBloque+20+10)){
+            yVelocidad = -yVelocidad;
+        }
+       
 
     }
     
