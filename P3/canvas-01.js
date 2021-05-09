@@ -19,7 +19,7 @@ const ESTADO = {
 //-- Arrancamos desde el estado inicial
 let estado = ESTADO.INIT;
 
-//-- Coordenadas del objeto
+//-- Coordenadas del objeto(bola)
 let x = 350;
 let y = 400;
 
