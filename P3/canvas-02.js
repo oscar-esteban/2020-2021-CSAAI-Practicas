@@ -19,10 +19,6 @@ const ESTADO = {
 //-- Arrancamos desde el estado inicial
 let estado = ESTADO.INIT;
 
-//-- Coordenadas del objeto(bola)
-let x = 350;
-let y = 400;
-
 //-- Velocidades del objeto
 let velx = 0;
 let vely = 0;
@@ -52,7 +48,7 @@ for(let i = 0; i < 5; i++){ //FILAS
 
 //bola---------------------------------------------------------------------
 let xBola = 250;
-let yBola = 510;
+let yBola = 560;
 let xVelocidad = 0;
 let yVelocidad = 0;
 
@@ -74,11 +70,24 @@ function bola(){
     ctx.closePath();
 }
 
+//bloque---------------------------------------------------------------------
+let xBloque = 210;
+let yBloque = 575;
+
+function bloque(){
+    ctx.beginPath();
+        ctx.rect(xBloque,yBloque, 80, 20);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        ctx.stroke();
+    ctx.closePath();
+}
+
 // estado inicial
 function inicio(){
     if(estado == ESTADO.INIT){
         xBola = 250;
-        yBola = 510;
+        yBola = 560;
         xVelocidad = 0;
         yVelocidad = 0;
     }
@@ -89,11 +98,11 @@ window.onkeydown = (e) => {
     console.log();
     //-- Según la tecla se hace una cosa u otra
     switch (e.key) {
-        case "s":
+        case " ":
               if (estado == ESTADO.INIT) {
                 console.log("JUGANDO");
                 xBola = 250;
-                yBola = 510;
+                yBola = 560;
           
                 //-- Darle velocidad
                 xVelocidad = 3;
@@ -103,9 +112,13 @@ window.onkeydown = (e) => {
                 estado = ESTADO.JUGANDO;
                 break;
           
-                return false;
               }
-            default:
+        case ".": // derecha
+            xBloque = xBloque + 10;
+            break;
+        case ",": //izquierda
+            xBloque = xBloque - 10; 
+        default:
     }
 }
 
@@ -160,6 +173,9 @@ for(let i = 0; i < 5; i++){
 }
 
     inicio();
+
+    // Mi bloque
+     bloque();
 
     // Mi bola
     bola();
