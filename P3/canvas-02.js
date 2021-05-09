@@ -92,6 +92,18 @@ function inicio(){
         yVelocidad = 0;
     }
 }
+//---------------------------------------------------------------------------
+function pop(){
+    for(let i = 0; i < 5; i++){
+        for(let j = 0; j < 9; j++){
+            if(xBola >= ladrillos[i][j].x && xBola <= (ladrillos[i][j].x+40+10) && yBola >= ladrillos[i][j].y && yBola <= (ladrillos[i][j].y)+20+10 && ladrillos[i][j].VISIBLE){
+                ladrillos[i][j].VISIBLE = false;
+                yVelocidad = -yVelocidad;
+               
+            }
+        }
+    }  
+}
 
 //TECLAS
 window.onkeydown = (e) => {
@@ -161,7 +173,7 @@ function update(){
          if(xBola >= xBloque && xBola < (xBloque+80+10) && yBola >= (yBloque-10) && yBola < (yBloque+20+10)){
             yVelocidad = -yVelocidad;
         }
-       
+       pop();
 
     }
     
