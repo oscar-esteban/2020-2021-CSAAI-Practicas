@@ -1,12 +1,18 @@
-/* Estilo del canvas
-  Lo bordeamos con una línea negra y le damos fondo
-  azul para distinguirlo
-*/
 
+body  {
+  /* Ubicación de la imagen de fondo */
+  background-image: url(fon3.jpg);
+  /* Para centrar la imagen */
+  background-position: center center;
+  /* Para que se reescale automaticamente con el navegador */
+  background-size: cover;
+ 
+  }
 canvas {
     background-color: rgb(0, 0, 0);
     border-style: solid;
     border-width: 1px;
     border-color: black;
     border-radius: 5px;
+    margin-left: 500px;
   }

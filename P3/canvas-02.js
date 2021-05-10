@@ -104,8 +104,40 @@ function pop(){
         }
     }  
 }
+//Tiempo--------------------------------------------------------------------
+let microsegundos = 0;
+let segundos = 0;
+let minutos = 0;
 
-//TECLAS
+function time(){
+    if (estado == ESTADO.JUGANDO) {
+        microsegundos ++;
+        if(microsegundos === 100){
+            microsegundos = 0;
+            segundos ++;
+            if(segundos < 10){
+                segundos = '0' + segundos;
+            }
+        }
+        if(segundos == 60){
+            minutos ++;
+            segundos = 0;
+            if(minutos < 10){
+                minutos = "0" + minutos;
+            }
+            if(segundos == 0){
+                segundos = "0" + segundos;
+            }
+        }
+    }
+}
+function cronometro(){
+    ctx.font = "25px Arial";
+    ctx.fillStyle = 'white';
+    ctx.fillText('Tiempo: ', 20, 40);
+    ctx.fillText(minutos + ':' + segundos, 130, 42);
+}
+//TECLAS-------------------------------------------------------------------
 window.onkeydown = (e) => {
     console.log();
     //-- Según la tecla se hace una cosa u otra
@@ -118,7 +150,7 @@ window.onkeydown = (e) => {
           
                 //-- Darle velocidad
                 xVelocidad = 3;
-                yVelocidad = -1;
+                yVelocidad = -2;
           
                 //-- Cambiar al estado de jugando!
                 estado = ESTADO.JUGANDO;
@@ -144,7 +176,7 @@ function update(){
 
     console.log("test");
     // estado inicial
-    
+    inicio();
 
     if(estado == ESTADO.JUGANDO){
        
@@ -194,13 +226,16 @@ for(let i = 0; i < 5; i++){
     }
 }
 
-    inicio();
+    
 
     // Mi bloque
-     bloque();
+    bloque();
 
     // Mi bola
     bola();
+
+    time();
+    cronometro();
 
     // Volver a ejecutar cuando toque
     requestAnimationFrame(update);
