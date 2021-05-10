@@ -23,6 +23,8 @@ let estado = ESTADO.INIT;
 let velx = 0;
 let vely = 0;
 
+
+
 // ladrillos------------------------------------------------------------
 const ladrillos = [];
 let xLadrillos = 15;
@@ -90,6 +92,9 @@ function inicio(){
         yBola = 560;
         xVelocidad = 0;
         yVelocidad = 0;
+        segundos = 0;
+        minutos = 0;
+        microsegundos = 0;
     }
 }
 //---------------------------------------------------------------------------
@@ -137,6 +142,18 @@ function cronometro(){
     ctx.fillText('Tiempo: ', 20, 40);
     ctx.fillText(minutos + ':' + segundos, 130, 42);
 }
+//VIDAS-------------------------------------------------------------------
+let vidass = 3;
+function vidas(){
+    ctx.font = "25px Arial";
+    ctx.fillStyle = 'white';
+    ctx.fillText('Vidas: ', 300, 680);
+    for (var i = 0; i <= vidass - 1;) {
+        ctx.fillText('O', 380 + (i*30), 682);
+        i += 1;
+    }
+}
+
 //TECLAS-------------------------------------------------------------------
 window.onkeydown = (e) => {
     console.log();
@@ -234,6 +251,10 @@ for(let i = 0; i < 5; i++){
     // Mi bola
     bola();
 
+    //vidas
+    vidas()
+
+    //tiempo
     time();
     cronometro();
 
