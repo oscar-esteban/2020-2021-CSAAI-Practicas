@@ -92,9 +92,6 @@ function inicio(){
         yBola = 560;
         xVelocidad = 0;
         yVelocidad = 0;
-        segundos = 0;
-        minutos = 0;
-        microsegundos = 0;
     }
 }
 //---------------------------------------------------------------------------
@@ -104,6 +101,7 @@ function pop(){
             if(xBola >= ladrillos[i][j].x && xBola <= (ladrillos[i][j].x+40+10) && yBola >= ladrillos[i][j].y && yBola <= (ladrillos[i][j].y)+20+10 && ladrillos[i][j].VISIBLE){
                 ladrillos[i][j].VISIBLE = false;
                 yVelocidad = -yVelocidad;
+                puntoss += 10;
                
             }
         }
@@ -153,7 +151,51 @@ function vidas(){
         i += 1;
     }
 }
+//PUNTOS-------------------------------------------------------------------
+let puntoss = 0;
+function puntos(){
+    ctx.font = "25px arial";
+    ctx.fillStyle = 'white';
+    ctx.fillText('Puntos: ', 300, 40);
+    ctx.fillText(puntoss, 420, 42);
+}
+//FIN---------------------------------------------------------------------
+function fin(){
+    if(vidass == 0){
+        estado = ESTADO.FIN;
+        ctx.font = "50px Arial";
+        ctx.fillStyle = 'red';
+        ctx.fillText('FIN DEL JUEGO', 50, 400);
+        ctx.font = "20px Arial";
+        ctx.fillStyle = 'white';
+        ctx.fillText('Has conseguido: ' + puntoss + ' puntos.', 100, 470);
+    }
+}
 
+//Victoria---------------------------------------------------------------------
+function victoria(){
+    if(puntoss == 450){
+        estado = ESTADO.FIN;
+        ctx.font = "50px Arial";
+        ctx.fillStyle = 'green';
+        ctx.fillText('¡¡HAS GANADO!!', 50, 400);
+        ctx.font = "20px Arial";
+        ctx.fillStyle = 'white';
+        ctx.fillText('Tu tiempo:   ' + minutos + ' minutos y ' + segundos + ' segundos.', 90, 470);
+    }
+}
+//INFO----------------------------------------------------------------------
+function info(){
+    if(estado == ESTADO.INIT && puntoss == 0){
+        ctx.font = "20px Arial";
+            ctx.fillStyle = 'white';
+            ctx.fillText('-Bienvenido a Pong.', 70, 300);
+            ctx.fillText('-Elimina todos los bloques para ganar.', 70, 330);
+            ctx.fillText('-Para moverte hacia la izquierda usa ",".', 70, 360);
+            ctx.fillText('-Para moverte hacia la derecha usa ".".', 70, 390);
+            ctx.fillText('-Pulsa "Espacio" para empezar a jugar.', 70, 420);
+    }
+}
 //TECLAS-------------------------------------------------------------------
 window.onkeydown = (e) => {
     console.log();
@@ -217,6 +259,7 @@ function update(){
         // si no golpeo, pierdo
         if(yBola > 685){
             estado = ESTADO.INIT;
+            vidass -= 1;
         }
          // Choque con mi bloque
          if(xBola >= xBloque && xBola < (xBloque+80+10) && yBola >= (yBloque-10) && yBola < (yBloque+20+10)){
@@ -243,7 +286,8 @@ for(let i = 0; i < 5; i++){
     }
 }
 
-    
+    //info
+    info();
 
     // Mi bloque
     bloque();
@@ -252,7 +296,16 @@ for(let i = 0; i < 5; i++){
     bola();
 
     //vidas
-    vidas()
+    vidas();
+
+    //puntos
+    puntos();
+
+    //fin
+    fin();
+
+    //Victoria
+    victoria();
 
     //tiempo
     time();
