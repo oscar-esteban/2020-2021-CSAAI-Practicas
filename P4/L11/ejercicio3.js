@@ -94,4 +94,4 @@ deslizadorAzul.oninput = () => {
     ctx.putImageData(imgData, 0, 0);
   }
 
-console.log("Fin...");
+console.log("Fin...");//FIN
