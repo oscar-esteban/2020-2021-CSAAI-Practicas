@@ -1,4 +1,4 @@
-console.log("Ejecutando JSd.s.")
+console.log("Ejecutando JS.....")
 
 //-- Obtener elementos del DOM
 const canvas = document.getElementById('canvas');
@@ -87,7 +87,6 @@ function deslizadores(){
 
 //funcion para poner la imagen en grises
 function grises(){
-  console.log("GRISSS");
   var grises = 0;
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
@@ -110,10 +109,8 @@ function grises(){
 
 bGris.onclick = () => {
   console.log("grisesd");
-  //document.getElementById('sliders').style.display = 'none';
-  console.log("grises2");
+  document.getElementById('sliders').style.display = 'none';
   grises();
-  ctx.drawImage(img, 0,0);
 }
 
 
