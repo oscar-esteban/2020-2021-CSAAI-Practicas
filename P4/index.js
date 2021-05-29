@@ -27,20 +27,20 @@ const bVertical= document.getElementById('vertical');
 document.getElementById('sliders').style.display = 'none';
 
 var img = img1;
-img1.style.border="rgb(22, 122, 2) 4px solid";
+img1.style.border="black 7px solid";
 
 //cuando pinchas en una imagen
 image1.onclick = () => {
     console.log("Imagen 1");
-    img1.style.border="rgb(22, 122, 2) 4px solid";
-    img2.style.border="black 2px solid";
+    img1.style.border="black 7px solid";
+    img2.style.border="black 1px solid";
     img1.src="djoco.jpg";
     img = img1 ;
 }
 image2.onclick = () => {
     console.log("Imagen 2");
-    img2.style.border="rgb(22, 122, 2) 4px solid";
-    img1.style.border="black 2px solid";
+    img2.style.border="black 7px solid";
+    img1.style.border="black 1px solid";
     img2.src="fede.jpg";
     img= img2 ;
 }
