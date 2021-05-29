@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Procesado de Imagen</title>
-        <script src="index.js" defer></script>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>ejercicio 5</title>
+</head>
 <body>
-   
-    
+    <div class= "fotos">
+        <table >
+            <td><img src="djoco.jpg" id="image1" width="400" height="300"></td> 
+            <bd>   
+            <td> <img src="fede.jpg" id="image2"  width="400" height="300"></td>
+        </table>
+    </div>
+    <div class= "lab"></div>
+        <canvas id="canvas" width="400" height="300"></canvas>
+        <br>
+        <input type="button" id="colores"  value="COLORES"/> 
+        <input type="button" id="grises"  value="GRISES"/> 
+        <input type="button" id="negativo"  value="NEGATIVO"/> 
+        <input type="button" id="horizontal"  value="REFLEJO HORIZONTAL"/>
+        <input type="button" id="vertical"  value="REFLEJO VERTICAL"/>
+        <table id="sliders">
+            <th>
+            <p>Establece el umbral de colores:</p>
+            <p id="range_valueR">00</p>
+            <input type="range" id="rojo" min="0" max="255" value="255"/> ROJO
+            <p id="range_valueV">00</p>
+            <input type="range" id="verde" min="0" max="255" value="255"/> VERDE
+            <p id="range_valueA">00</p>
+            <input type="range" id="azul" min="0" max="255" value="255"/> AZUL
+        </th>
+        </table>
+    </div>    
 </body>
 </html>
