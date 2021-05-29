@@ -1,0 +1,39 @@
+body {
+  text-align: center;
+  background-image: url(fondo.jpg);
+  background: cover;
+  background-size: cover;
+  column-count: 2;
+  }
+/*BOTONES*/
+  input{
+    height: 30px;
+    font-weight: bolder;
+    color:black;
+    border-radius: 20px;
+    border-color: rgb(227, 230, 75);
+    background-color: rgb(226, 233, 190);
+}
+
+#image1{
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+#image2{
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+/*deslizadores*/
+#sliders{
+  margin-left: 220px;
+  border-radius: 20px;
+  background-color: rgb(226, 233, 190);
+  opacity: 0.85;
+}
+
+canvas{
+  border-radius: 20px;
+  margin-top: 40px;
+}
