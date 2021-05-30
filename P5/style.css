@@ -1,0 +1,10 @@
+body  {
+    /* Ubicación de la imagen de fondo */
+    background-image: url(fondo.jpg);
+    /* Para centrar la imagen */
+    background-position: center center;
+    /* Para que se reescale automaticamente con el navegador */
+    background-size: cover;
+   
+    }
+  
