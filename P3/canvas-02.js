@@ -2,6 +2,7 @@ console.log("Ejecutando JS...");
 
 const canvas = document.getElementById("canvas");
 
+
 //-- Definir el tamaño del convas
 canvas.width = 470;
 canvas.height = 700;
@@ -62,9 +63,9 @@ function bola(){
     imagen.src = 'bola.jpg'
     ctx.beginPath();
         ctx.arc(xBola, yBola, 10, 0, 2 * Math.PI);
-        ctx.strokeStyle = 'black';
+        ctx.strokeStyle = 'white';
         ctx.lineWidth = 3;
-        ctx.fillStyle = ctx.createPattern(imagen, "repeat");
+        ctx.fillStyle = 'white';
         //-- Dibujar el trazo
         ctx.stroke()
         //-- Dibujar el relleno
